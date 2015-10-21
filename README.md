@@ -14,4 +14,4 @@ In this repository, for Rada you will find:
 
 
 
-This repository was constructed by <a href="https://github.com/hkumbum">Harini Reddy Kumbum</a> under the supervision of Murphy Emerson-Hill. 
+This repository was constructed by [Harini Reddy Kumbum](https://github.com/hkumbum) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson).
