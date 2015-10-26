@@ -15,4 +15,4 @@ In this repository, for Rada you will find:
 
 
 
-This repository was constructed by [Harini Reddy Kumbum](https://github.com/hkumbum) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson).
+This repository was constructed by [Harini Reddy Kumbum](https://github.com/hkumbum) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson). Thanks to Michael Whalen and Tuan-Hung Pham for their help in establishing this repository.
