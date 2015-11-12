@@ -21,7 +21,7 @@ This folder contains
 ***
 
 ## Acknowledgements:
-  * Used the base box [box-cutter/ubuntu1404-desktop]
+  * Used the base box [box-cutter/ubuntu1404-desktop](https://atlas.hashicorp.com/box-cutter/boxes/ubuntu1404-desktop/versions/2.0.5)
 
 ***
 
