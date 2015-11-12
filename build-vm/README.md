@@ -27,4 +27,5 @@ This folder contains
 
 ## References:
 * https://atlas.hashicorp.com/box-cutter/boxes/ubuntu1404-desktop/versions/2.0.5
+* http://www.sitepoint.com/vagrantfile-explained-setting-provisioning-shell/
 
