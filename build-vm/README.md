@@ -15,12 +15,13 @@ This folder contains
 4. Run `vagrant up` to set up the vm. Virtual box image gets downloaded.
 5. The vagrant file will begin execution and boot up a VM after some time.
 6. Credentials to login.
-    * Username : vagrant
-    * Password : vagrant
+  * Username : vagrant
+  * Password : vagrant
+ 
 ***
 
 ## Acknowledgements:
-* Used the base box [box-cutter/ubuntu1404-desktop]
+  * Used the base box [box-cutter/ubuntu1404-desktop]
 
 ***
 
