@@ -1,6 +1,8 @@
 ## Contents:
 This folder contains
+
 1. __README.md__
+
 2. __Vagrantfile__ - To set up Ubuntu 14 Desktop virtual machine
 
 ***
