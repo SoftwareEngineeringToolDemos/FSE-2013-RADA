@@ -22,6 +22,8 @@ This folder contains
 
 ## Acknowledgements:
   * Used the base box [box-cutter/ubuntu1404-desktop](https://atlas.hashicorp.com/box-cutter/boxes/ubuntu1404-desktop/versions/2.0.5)
+  * Tutorial to install Java in Linux machines can be viewed [here] (https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get).
+ 
 
 ***
 
