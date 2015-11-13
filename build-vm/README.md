@@ -12,7 +12,7 @@ This folder contains
 3. Clone this repo and `cd` into the directory. 
   * git clone https://github.com/SoftwareEngineeringToolDemos/FSE-2013-RADA.git FSE-2013-RADA
   * cd FSE-2013-RADA/build-vm
-4. Run `vagrant up` to set up the vm. Virtual box image gets downloaded.
+4. Run `vagrant up` to set up the virtual machine.
 5. The vagrant file will begin execution and boot up a VM after some time.
 6. Credentials to login.
   * Username : vagrant
@@ -28,4 +28,5 @@ This folder contains
 ## References:
 * https://atlas.hashicorp.com/box-cutter/boxes/ubuntu1404-desktop/versions/2.0.5
 * http://www.sitepoint.com/vagrantfile-explained-setting-provisioning-shell/
+* https://docs.vagrantup.com/v2/getting-started/index.html
 
