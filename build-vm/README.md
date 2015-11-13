@@ -9,12 +9,11 @@ This folder contains
 
 1. Download and install [VirtualBox](https://www.virtualbox.org/).
 2. Download and install [Vagrant](http://www.vagrantup.com/).
-3. Clone this repo and `cd` into the directory. 
-  * git clone https://github.com/SoftwareEngineeringToolDemos/FSE-2013-RADA.git FSE-2013-RADA
-  * cd FSE-2013-RADA/build-vm
-4. Run `vagrant up` to set up the virtual machine.
-5. The vagrant file will begin execution and boot up a VM after some time.
-6. Credentials to login.
+3. Copy the "Vagrantfile" in this folder to your host OS.
+4. Go to the directory which contains the copied Vagrantfile.
+5. Run the command "vagrant up --provider virtualbox"
+6. The vagrant file will begin execution and boot up a VM after some time.
+7. Credentials to login.
   * Username : vagrant
   * Password : vagrant
  
