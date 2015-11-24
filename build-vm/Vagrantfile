@@ -48,9 +48,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   # Don't boot with headless mode
      vb.gui = true
      vb.name = "RADA"
-  #
-  #   # Use VBoxManage to customize the VM. For example to change memory:
-  #   vb.customize ["modifyvm", :id, "--memory", "1024"]
+     vb.memory = "2048"
     end
   #
   # View the documentation for the provider you're using for more
@@ -98,6 +96,18 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       sudo apt-get -y update
       sudo apt-get -y install openjdk-7-jre
       sudo apt-get -y install openjdk-7-jdk
+      wget https://github.com/Z3Prover/z3/archive/master.zip -O z3.zip
+	    unzip z3.zip
+	    cd z3-*
+      sudo apt-get install build-essential
+      CXX=clang++ CC=clang python scripts/mk_make.py
+      cd build
+      make
+      sudo make install
+      wget http://crisys.cs.umn.edu/rada/rada_java_10082013.zip -O rada_java_10082013.zip
+      sudo unzip rada_java_10082013.zip -d /rada_java_10082013
+      wget http://crisys.cs.umn.edu/rada/benchmark_examples_FSE_submission.zip -O benchmark_examples_FSE_submission.zip
+      sudo unzip benchmark_examples_FSE_submission.zip -d /benchmark_examples_FSE_submission
   SHELL
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).
