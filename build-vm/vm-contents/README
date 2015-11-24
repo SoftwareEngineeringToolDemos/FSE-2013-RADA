@@ -1,0 +1,22 @@
+FSE 2013 RADA : A Tool for Reasoning about Algebraic Data Types with Abstractions
+
+The tool was originally presented in this paper - http://dl.acm.org/citation.cfm?id=2491411.2494597&coll=DL&dl=GUIDE&CFID=706770050&CFTOKEN=57058403
+
+Official Project Page	- http://crisys.cs.umn.edu/rada/
+Video 			- https://youtu.be/7JRpHXNwVVs
+
+Getting Started
+
+1. Open the Terminal and run following commands
+
+cd Desktop/rada_java_10082013
+
+2. Run RADA as follows
+
+java -jar rada.jar --solver z3 ../benchmark_examples_parameterized_catamorphisms/RBTree.Black_Property.rada
+
+or
+
+java -jar rada.jar --solver z3 ../benchmark_examples_FSE_submission/sumtree01.rada
+
+Try other examples by replacing sumtree01.rada with array_checksum.SumListAdd.rada , negative_positive02.rada or any other examples in benchmark_examples_FSE_submission or benchmark_examples_parameterized_catamorphisms folder
