@@ -1,1 +1,39 @@
+Prerequisite tools:
+-------------------
+1. Java 1.7 - http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+2. z3 solver - https://github.com/Z3Prover/z3
+
+Links to Source, Binary and example files:
+-------------------------------------------
+Binary file - http://crisys.cs.umn.edu/rada/rada_java_10082013.zip
+Source file - http://crisys.cs.umn.edu/rada/rada_eclipse_project_10082013.zip
+Benchmark examples for FSE paper - http://crisys.cs.umn.edu/rada/benchmark_examples_FSE_submission.zip
+Benchmark examples for parameterized catamorphisms - http://crisys.cs.umn.edu/rada/benchmark_examples_parameterized_catamorphisms.zip
+
+How to install the tool
+-----------------------
+1. Building Z3 using clang and clang++ on Linux/OSX
+
+CXX=clang++ CC=clang python scripts/mk_make.py
+cd build
+make
+
+2. Download the zip file via the link to "Binary file" above. The zip file contains rada.jar and rada_lib, a folder that consists of third-party libraries that RADA depends on.
+
+3. Unzip the zip file.
+
+4. Go to the folder containing rada.jar and rada_lib that you just unzipped.
+
+5. Run RADA as follows:
+
+       java -jar rada.jar --solver solver_name [--showTempFiles] [--verbose #arg] file_path
+
+where solver_name is the name of the SMT solver in your system (cvc4 or z3) and file_path is the path to the input file. Note that the solver must be in your system path. 
+
+Example: Assuming that you are in the folder containing rada.jar and rada_lib and you want to check the satisfiability of sumtree01.rada, one of our benchmark examples, with z3. The command you could use is as follows:
+
+       java -jar rada.jar --solver z3 your_path_to_sumtree01/sumtree01.rada
+
+
 
