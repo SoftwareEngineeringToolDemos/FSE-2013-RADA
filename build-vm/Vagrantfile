@@ -4,7 +4,7 @@
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # Setting Vagrant box
-    config.vm.box = "box-cutter/ubuntu1404-dektop"
+    config.vm.box = "box-cutter/ubuntu1404-desktop"
     # Vagrant box URL
     config.vm.box_url = "https://atlas.hashicorp.com/box-cutter/boxes/ubuntu1404-desktop/versions/2.0.5/providers/virtualbox.box"
 
