@@ -3,61 +3,65 @@
 
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-	#Vagrant box
+    # Setting Vagrant box
     config.vm.box = "box-cutter/ubuntu1404-dektop"
+    # Vagrant box URL
     config.vm.box_url = "https://atlas.hashicorp.com/box-cutter/boxes/ubuntu1404-desktop/versions/2.0.5/providers/virtualbox.box"
 
-    #Vagrant provider settings
+    # Vagrant provider settings
     config.vm.provider :virtualbox do |vb|
-  #   # Don't boot with headless mode
-     vb.gui = true
-     vb.name = "RADA"
-     vb.memory = "2048"
+    # Don't boot with headless mode
+    vb.gui = true
+    # Setting VM name 
+    vb.name = "RADA"
+    
+    # Disable USB controller
+    vb.customize ["modifyvm", :id, "--usb", "off"]
+    vb.customize ["modifyvm", :id, "--usbehci", "off"]
+    
+    # Customize the memory of VM 
+    vb.memory = "2048"
     end
   
-  #vagrant provisioning  
-  config.vm.provision "shell",inline: <<-SHELL
+    #vagrant provisioning  
+    config.vm.provision "shell",inline: <<-SHELL
+      
+      # Disabling screensaver lock
       sudo gsettings set org.gnome.desktop.screensaver lock-enabled false
 	  
       # Java installation
-	  sudo apt-get -y update
-	  sudo apt-get -y install openjdk-7-jre
+      sudo apt-get -y update
+      sudo apt-get -y install openjdk-7-jre
       sudo apt-get -y install openjdk-7-jdk
 	  
-	  # z3 installation
-	  wget https://github.com/Z3Prover/z3/archive/master.zip -O z3.zip
-	  unzip z3.zip
-	  cd z3-*
+      # z3 installation
+      wget https://github.com/Z3Prover/z3/archive/master.zip -O z3.zip
+      unzip z3.zip
+      cd z3-*
       sudo apt-get install build-essential
       CXX=clang++ CC=clang python scripts/mk_make.py
       cd build
       make
       sudo make install
 	  
-	  #Download the FSE-2013-RADA folder from github to vm
+      #Download the FSE-2013-RADA folder from github to vm
       wget https://github.com/SoftwareEngineeringToolDemos/FSE-2013-RADA/archive/master.zip -O rada.zip
-	  sudo unzip rada.zip -d /rada
+      sudo unzip rada.zip -d /rada
 	  
-	  #Put Readme, installation.txt , link to the video and license files on desktop
-	  cp /rada/FSE-2013-RADA-master/build-vm/vm-contents/* /home/vagrant/Desktop
+      #Copy Readme, installation.txt , link to the video and license files on desktop
+      cp /rada/FSE-2013-RADA-master/build-vm/vm-contents/* /home/vagrant/Desktop
 	  
-	  #Put Binary on Desktop
-	  cp -r /rada/FSE-2013-RADA-master/rada_java_10082013 /home/vagrant/Desktop
+      #Copy Binary on Desktop
+      cp -r /rada/FSE-2013-RADA-master/rada_java_10082013 /home/vagrant/Desktop
 	  
-	  #Put examples on desktop
-	  cp -r /rada/FSE-2013-RADA-master/benchmark_examples_FSE_submission /home/vagrant/Desktop
-	  
-	  # Sidebar cleanup and logout
-	  
-	  sudo rm -f "/usr/share/applications/ubuntu-amazon-default.desktop"
-	  sudo rm -f "/usr/share/applications/libreoffice-calc.desktop"
-	  sudo rm -f "/usr/share/applications/libreoffice-writer.desktop"
-	  sudo rm -f "/usr/share/applications/libreoffice-impress.desktop"
-	  sudo rm -f "/usr/share/applications/ubuntu-software-center.desktop"
-	  
-	  #Reboot for changes
-	  
-	  sudo reboot
+      #Put examples on desktop
+      cp -r /rada/FSE-2013-RADA-master/benchmark_examples_FSE_submission /home/vagrant/Desktop
+      
+      # Upstart job for configuring sidebar and tool visibility(asciinema)
+      mv /home/vagrant/Desktop/rada.conf /home/vagrant/.config/upstart/rada.conf
+
+      #Reboot for changes
+      sudo reboot
 	  
   SHELL
   
