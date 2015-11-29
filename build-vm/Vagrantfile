@@ -8,33 +8,34 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.box_url = "https://atlas.hashicorp.com/box-cutter/boxes/ubuntu1404-desktop/versions/2.0.5/providers/virtualbox.box"
 
     #Vagrant provider settings
-	config.vm.provider :virtualbox do |vb|
+    config.vm.provider :virtualbox do |vb|
   #   # Don't boot with headless mode
      vb.gui = true
      vb.name = "RADA"
-	 vb.memory = "2048"
+     vb.memory = "2048"
     end
   
   #vagrant provisioning  
   config.vm.provision "shell",inline: <<-SHELL
-
-    # Java installation
+      sudo gsettings set org.gnome.desktop.screensaver lock-enabled false
+	  
+      # Java installation
 	  sudo apt-get -y update
 	  sudo apt-get -y install openjdk-7-jre
-    sudo apt-get -y install openjdk-7-jdk
+      sudo apt-get -y install openjdk-7-jdk
 	  
 	  # z3 installation
 	  wget https://github.com/Z3Prover/z3/archive/master.zip -O z3.zip
 	  unzip z3.zip
 	  cd z3-*
-    sudo apt-get install build-essential
-    CXX=clang++ CC=clang python scripts/mk_make.py
-    cd build
-    make
-    sudo make install
+      sudo apt-get install build-essential
+      CXX=clang++ CC=clang python scripts/mk_make.py
+      cd build
+      make
+      sudo make install
 	  
 	  #Download the FSE-2013-RADA folder from github to vm
-    wget https://github.com/SoftwareEngineeringToolDemos/FSE-2013-RADA/archive/master.zip -O rada.zip
+      wget https://github.com/SoftwareEngineeringToolDemos/FSE-2013-RADA/archive/master.zip -O rada.zip
 	  sudo unzip rada.zip -d /rada
 	  
 	  #Put Readme, installation.txt , link to the video and license files on desktop
@@ -47,7 +48,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	  cp -r /rada/FSE-2013-RADA-master/benchmark_examples_FSE_submission /home/vagrant/Desktop
 	  
 	  # Sidebar cleanup and logout
-	  echo "***** Removing Unneeded icons *****"
+	  
 	  sudo rm -f "/usr/share/applications/ubuntu-amazon-default.desktop"
 	  sudo rm -f "/usr/share/applications/libreoffice-calc.desktop"
 	  sudo rm -f "/usr/share/applications/libreoffice-writer.desktop"
@@ -55,7 +56,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	  sudo rm -f "/usr/share/applications/ubuntu-software-center.desktop"
 	  
 	  #Reboot for changes
-	  echo "***** Reboot required. Please stand by..... *****"
+	  
 	  sudo reboot
 	  
   SHELL
