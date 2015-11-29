@@ -5,6 +5,8 @@ This folder contains
 
 2. __Vagrantfile__ - To set up Ubuntu 14 Desktop virtual machine
 
+3. __vm-contents__ - It contains the files required to build vm
+
 ***
 
 ## Set-up instructions:
