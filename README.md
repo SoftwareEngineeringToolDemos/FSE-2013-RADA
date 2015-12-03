@@ -12,7 +12,8 @@ In this repository, for Rada you will find:
 
 * :white_check_mark:<a href="http://crisys.cs.umn.edu/rada/rada_eclipse_project_10082013.zip">Source code </a> (available)
 * :white_check_mark:<a href="http://crisys.cs.umn.edu/rada/rada_java_10082013.zip">Executable code </a> (available)
+* :white_check_mark:<a href="http://crisys.cs.umn.edu/rada/rada_java_10082013.zip">Virtual Machine containing the tool </a> (available)
 
 
 
-This repository was constructed by [Harini Reddy Kumbum](https://github.com/hkumbum) under the supervision of [Emerson Murphy-Hill](https://github.com/CaptainEmerson). Thanks to Michael Whalen and Tuan-Hung Pham for their help in establishing this repository.
+This repository was constructed by [Harini Reddy Kumbum](https://github.com/hkumbum) under the supervision of [Dr. Emerson Murphy-Hill](https://github.com/CaptainEmerson). Thanks to Michael Whalen and Tuan-Hung Pham for their help in establishing this repository.
