@@ -14,7 +14,7 @@ In this repository, for Rada you will find:
 * :white_check_mark:<a href="https://github.com/SoftwareEngineeringToolDemos/FSE-2013-RADA/tree/master/rada_eclipse_project_10082013/rada">Source code </a> (available)
 * :white_check_mark:<a href="https://github.com/SoftwareEngineeringToolDemos/FSE-2013-RADA/tree/master/rada_java_10082013">Executable code </a> (available)
 * :white_check_mark:<a href="https://github.com/SoftwareEngineeringToolDemos/FSE-2013-RADA/blob/master/build-vm/Vagrantfile">Vagrant script to create virtual machine containing the tool </a> (available)
-* :white_check_mark:<a href="https://drive.google.com/a/ncsu.edu/file/d/0B47747LYYb9JRmRDSDJDYmFnWlE/view">Virtual machine containing the tool </a> (available)
+* :white_check_mark: [Virtual machine containing tool](http://go.ncsu.edu/SE-tool-VMs) (available)
 
 
 
